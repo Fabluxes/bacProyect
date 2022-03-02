@@ -1,4 +1,4 @@
-# Proyecto proceso de seleccion BAC
+# Proyecto proceso de selección BAC
 
 <h2>PARTICIPANTE</h2>
 
