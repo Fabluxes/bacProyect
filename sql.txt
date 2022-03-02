@@ -1,0 +1,60 @@
+-- SQLINES LICENSE FOR EVALUATION USE ONLY
+CREATE TABLE CLIENTE (
+     id_CLIENTE INT NOT NULL IDENTITY,
+     NOMBRE_CLIENTE CHAR(50) NOT NULL,
+     EMAIL CHAR(100) NOT NULL,
+     PRIMARY KEY (id_CLIENTE)
+ );
+ 
+ -- SQLINES LICENSE FOR EVALUATION USE ONLY
+ CREATE TABLE CATEGORIAS (
+     id_CATEGORIA INT NOT NULL IDENTITY,
+     CATEGORIA CHAR(50) NOT NULL,
+     PRIMARY KEY (id_CATEGORIA)
+ );
+ 
+-- SQLINES LICENSE FOR EVALUATION USE ONLY
+create table PRODUCTOS(
+    id_PRODUCTOS int identity,
+    NOMBRE_PRODUCTO varchar(100) not null,
+    DETALLE_PRODUCTO varchar(300) not null,
+    LINKIMAGEN_PRODUCTO varchar(500) not null,
+    type_id int,
+    primary key(id_PRODUCTOS),
+    constraint fk_type
+    foreign key(type_id) 
+        references CATEGORIAS(id_CATEGORIA)
+       ON DELETE CASCADE
+);
+
+----inserts
+
+insert into 
+    CATEGORIAS(CATEGORIA)
+values
+    ('Entertainment'),
+    ('Computing'),
+    ('Communication'),
+    ('Lifestyle'),
+    ('Cameras');
+
+insert into 
+    PRODUCTOS(NOMBRE_PRODUCTO,DETALLE_PRODUCTO,LINKIMAGEN_PRODUCTO,type_id)
+values
+     ('1a','DETALLES DEL PRODUCTO','LINK IMAGEN',1),
+      ('2b','DETALLES DEL PRODUCTO','LINK IMAGEN',2),
+     ('3b','DETALLES DEL PRODUCTO','LINK IMAGEN',3);
+ 
+
+
+
+insert into 
+    CLIENTE(NOMBRE_CLIENTE,EMAIL)
+values
+     ('OSCAR','email.@'),
+      ('aNA','@.com'),
+     ('Ronald','@@.com.com');
+
+
+
+	 DELETE FROM [categorias] WHERE [id_CATEGORIA] = 1
